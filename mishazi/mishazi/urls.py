@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from blog.views import current_datetime
+from blog.views import current_datetime,add_article
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -15,5 +15,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^blog/',current_datetime),
+    url(r'^blog/add/',add_article),
+    url(r'^blog/$',current_datetime),
+    
 )
