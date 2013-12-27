@@ -3,10 +3,11 @@
 # @Author: LiSnB
 # @Date:   2013-12-26 17:00:21
 # @Last Modified by:   LiSnB
-# @Last Modified time: 2013-12-26 17:59:38
+# @Last Modified time: 2013-12-27 15:38:36
 # @Email: lisnb.h@gmail.comfrom django.db import models
 
 from django.db import models
+from wmd import models as wmd_models
 
 # Create your models here.
 
@@ -16,6 +17,7 @@ class Article(models.Model):
 	publish_datetime=models.DateTimeField(auto_now=True)
 	last_modify_datetime=models.DateTimeField(auto_now=True)
 	author=models.CharField(max_length=50)
+	description = wmd_models.MarkDownField()
 	# lastedition=models.ForeignKey(Article)
 	# nextedition=models.ForeignKey(Article)
 
